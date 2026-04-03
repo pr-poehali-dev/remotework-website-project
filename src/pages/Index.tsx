@@ -323,7 +323,12 @@ export default function Index() {
             </div>
 
             <div>
-              <form className="space-y-5" onSubmit={e => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={e => {
+                e.preventDefault();
+                const subject = encodeURIComponent(`Вопрос от ${contactForm.name}`);
+                const body = encodeURIComponent(`Имя: ${contactForm.name}\nEmail: ${contactForm.email}\n\n${contactForm.message}`);
+                window.location.href = `mailto:yurha.1990@gmail.com?subject=${subject}&body=${body}`;
+              }}>
                 <div>
                   <label className="font-body text-xs text-muted-foreground uppercase tracking-wide block mb-2">Имя</label>
                   <input
