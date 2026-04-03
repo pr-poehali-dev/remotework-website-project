@@ -4,15 +4,15 @@ import Icon from "@/components/ui/icon";
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/9a5a11e5-106d-4c07-89c0-21534e5eeeb9/files/b9a7b842-734e-430f-994f-68ea50c2554b.jpg";
 
 const SPECIALTIES = [
-  { id: 1, title: "Дизайнер", icon: "Palette" },
-  { id: 2, title: "Для мам в декрете", icon: "Heart" },
-  { id: 3, title: "Копирайтер", icon: "FileText" },
-  { id: 4, title: "Маркетолог", icon: "TrendingUp" },
-  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag" },
-  { id: 6, title: "Нейросети", icon: "Cpu" },
-  { id: 7, title: "Повышение квалификации", icon: "GraduationCap" },
-  { id: 8, title: "Тестирование ПО", icon: "Bug" },
-  { id: 9, title: "Технический помощник", icon: "Wrench" },
+  { id: 1, title: "Дизайнер", icon: "Palette", desc: "Создание визуальных образов, интерьеров и брендов. Востребованная творческая профессия с возможностью работать на международных клиентов." },
+  { id: 2, title: "Для мам в декрете", icon: "Heart", desc: "Гибкий формат работы для мам в декретном отпуске. Доход из дома без ущерба для семьи и без опыта работы." },
+  { id: 3, title: "Копирайтер", icon: "FileText", desc: "Написание продающих текстов, статей и сценариев. Одна из самых доступных профессий для старта в удалённой работе." },
+  { id: 4, title: "Маркетолог", icon: "TrendingUp", desc: "Продвижение товаров и услуг в интернете. Работа с рекламой, аналитикой и стратегиями роста бизнеса." },
+  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag", desc: "Управление продажами на Wildberries, Ozon и других платформах. Перспективное направление с высоким спросом на специалистов." },
+  { id: 6, title: "Нейросети", icon: "Cpu", desc: "Работа с инструментами искусственного интеллекта. Навык будущего, который уже сейчас открывает новые карьерные возможности." },
+  { id: 7, title: "Повышение квалификации", icon: "GraduationCap", desc: "Углубление знаний в своей профессии для карьерного роста. Актуально для специалистов, которые хотят зарабатывать больше." },
+  { id: 8, title: "Тестирование ПО", icon: "Bug", desc: "Проверка качества программного обеспечения. Профессия с низким порогом входа и стабильно высоким спросом на рынке." },
+  { id: 9, title: "Технический помощник", icon: "Wrench", desc: "Административная и техническая поддержка бизнеса удалённо. Отличный старт для тех, кто хочет войти в IT-сферу." },
 ];
 
 const COURSES = [
@@ -174,17 +174,18 @@ export default function Index() {
                 <button
                   key={spec.id}
                   onClick={() => scrollToSection("Курсы")}
-                  className="card-hover border border-border bg-white p-6 group flex items-center gap-4 text-left w-full"
+                  className="card-hover border border-border bg-white p-6 group flex flex-col gap-4 text-left w-full"
                 >
                   <div className="w-12 h-12 bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-50 transition-colors">
                     <Icon name={spec.icon} size={22} className="text-primary group-hover:text-amber-600 transition-colors" fallback="Briefcase" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors">{spec.title}</h3>
-                    <div className="flex items-center gap-1 mt-1 text-xs font-body text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Icon name="ArrowDown" size={12} />
-                      Смотреть курсы
-                    </div>
+                    <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors mb-2">{spec.title}</h3>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">{spec.desc}</p>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs font-body text-amber-600 font-semibold pt-2 border-t border-border opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Icon name="ArrowDown" size={12} />
+                    Смотреть курсы
                   </div>
                 </button>
               ))}
