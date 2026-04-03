@@ -4,15 +4,15 @@ import Icon from "@/components/ui/icon";
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/9a5a11e5-106d-4c07-89c0-21534e5eeeb9/files/b9a7b842-734e-430f-994f-68ea50c2554b.jpg";
 
 const SPECIALTIES = [
-  { id: 1, title: "Дизайнер", icon: "Palette", desc: "Создание визуальных образов, интерьеров и брендов. Востребованная творческая профессия с возможностью работать на международных клиентов." },
-  { id: 2, title: "Для мам в декрете", icon: "Heart", desc: "Гибкий формат работы для мам в декретном отпуске. Доход из дома без ущерба для семьи и без опыта работы." },
-  { id: 3, title: "Копирайтер", icon: "FileText", desc: "Написание продающих текстов, статей и сценариев. Одна из самых доступных профессий для старта в удалённой работе." },
-  { id: 4, title: "Маркетолог", icon: "TrendingUp", desc: "Продвижение товаров и услуг в интернете. Работа с рекламой, аналитикой и стратегиями роста бизнеса." },
-  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag", desc: "Управление продажами на Wildberries, Ozon и других платформах. Перспективное направление с высоким спросом на специалистов." },
-  { id: 6, title: "Нейросети", icon: "Cpu", desc: "Работа с инструментами искусственного интеллекта. Навык будущего, который уже сейчас открывает новые карьерные возможности." },
-  { id: 7, title: "Повышение квалификации", icon: "GraduationCap", desc: "Углубление знаний в своей профессии для карьерного роста. Актуально для специалистов, которые хотят зарабатывать больше." },
-  { id: 8, title: "Тестирование ПО", icon: "Bug", desc: "Проверка качества программного обеспечения. Профессия с низким порогом входа и стабильно высоким спросом на рынке." },
-  { id: 9, title: "Технический помощник", icon: "Wrench", desc: "Административная и техническая поддержка бизнеса удалённо. Отличный старт для тех, кто хочет войти в IT-сферу." },
+  { id: 1, title: "Дизайнер", icon: "Palette", desc: "Создание визуальных образов, интерьеров и брендов. Востребованная творческая профессия с возможностью работать на международных клиентов.", color: "from-violet-600 to-purple-800", img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" },
+  { id: 2, title: "Для мам в декрете", icon: "Heart", desc: "Гибкий формат работы для мам в декретном отпуске. Доход из дома без ущерба для семьи и без опыта работы.", color: "from-rose-500 to-pink-700", img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" },
+  { id: 3, title: "Копирайтер", icon: "FileText", desc: "Написание продающих текстов, статей и сценариев. Одна из самых доступных профессий для старта в удалённой работе.", color: "from-sky-500 to-blue-700", img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80" },
+  { id: 4, title: "Маркетолог", icon: "TrendingUp", desc: "Продвижение товаров и услуг в интернете. Работа с рекламой, аналитикой и стратегиями роста бизнеса.", color: "from-orange-500 to-red-700", img: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=400&q=80" },
+  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag", desc: "Управление продажами на Wildberries, Ozon и других платформах. Перспективное направление с высоким спросом на специалистов.", color: "from-emerald-500 to-teal-700", img: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80" },
+  { id: 6, title: "Нейросети", icon: "Cpu", desc: "Работа с инструментами искусственного интеллекта. Навык будущего, который уже сейчас открывает новые карьерные возможности.", color: "from-indigo-500 to-blue-800", img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&q=80" },
+  { id: 7, title: "Повышение квалификации", icon: "GraduationCap", desc: "Углубление знаний в своей профессии для карьерного роста. Актуально для специалистов, которые хотят зарабатывать больше.", color: "from-amber-500 to-yellow-700", img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80" },
+  { id: 8, title: "Тестирование ПО", icon: "Bug", desc: "Проверка качества программного обеспечения. Профессия с низким порогом входа и стабильно высоким спросом на рынке.", color: "from-cyan-500 to-teal-800", img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=80" },
+  { id: 9, title: "Технический помощник", icon: "Wrench", desc: "Административная и техническая поддержка бизнеса удалённо. Отличный старт для тех, кто хочет войти в IT-сферу.", color: "from-slate-500 to-gray-800", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" },
 ];
 
 const COURSES = [
@@ -174,18 +174,24 @@ export default function Index() {
                 <button
                   key={spec.id}
                   onClick={() => scrollToSection("Курсы")}
-                  className="card-hover border border-border bg-white p-6 group flex flex-col gap-4 text-left w-full"
+                  className="card-hover group flex flex-col overflow-hidden text-left w-full border border-border"
                 >
-                  <div className="w-12 h-12 bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-50 transition-colors">
-                    <Icon name={spec.icon} size={22} className="text-primary group-hover:text-amber-600 transition-colors" fallback="Briefcase" />
+                  <div className="relative h-36 overflow-hidden">
+                    <img src={spec.img} alt={spec.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${spec.color} opacity-80 group-hover:opacity-70 transition-opacity`} />
+                    <div className="absolute inset-0 p-5 flex items-end">
+                      <div className="w-10 h-10 bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <Icon name={spec.icon} size={20} className="text-white" fallback="Briefcase" />
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors mb-2">{spec.title}</h3>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed">{spec.desc}</p>
-                  </div>
-                  <div className="flex items-center gap-1 text-xs font-body text-amber-600 font-semibold pt-2 border-t border-border opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Icon name="ArrowDown" size={12} />
-                    Смотреть курсы
+                  <div className="bg-white p-5 flex flex-col gap-3 flex-1">
+                    <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors">{spec.title}</h3>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">{spec.desc}</p>
+                    <div className="flex items-center gap-1 text-xs font-body text-amber-600 font-semibold pt-3 border-t border-border">
+                      <Icon name="ArrowDown" size={12} />
+                      Смотреть курсы
+                    </div>
                   </div>
                 </button>
               ))}
