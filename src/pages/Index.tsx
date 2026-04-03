@@ -16,15 +16,15 @@ const SPECIALTIES = [
 ];
 
 const COURSES = [
-  { id: 1, title: "Дизайнер интерьера", icon: "Palette", href: "https://best-trening.ru/?o=18039&w=154170&l=9" },
-  { id: 2, title: "Для мам в декрете", icon: "Heart", href: "https://best-trening.ru/?o=27381&w=154170&l=1" },
-  { id: 3, title: "Копирайтер", icon: "FileText", href: "https://best-trening.ru/?o=4042&w=154170&l=1" },
-  { id: 4, title: "Маркетолог", icon: "TrendingUp", href: "https://best-trening.ru/?o=7400&w=154170&l=1" },
-  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag", href: "https://best-trening.ru/?o=32287&w=154170&l=2" },
-  { id: 6, title: "Нейросети", icon: "Cpu", href: "https://best-trening.ru/?o=6949&w=154170&l=2" },
-  { id: 7, title: "Повышение квалификации", icon: "GraduationCap", href: "https://best-trening.ru/?o=77132&w=154170&l=1" },
-  { id: 8, title: "Тестирование ПО", icon: "Bug", href: "https://best-trening.ru/?o=54693&w=154170&l=4" },
-  { id: 9, title: "Технический помощник", icon: "Wrench", href: "https://best-trening.ru/?o=8389&w=154170&l=1" },
+  { id: 1, title: "Дизайнер интерьера", icon: "Palette", href: "https://best-trening.ru/?o=18039&w=154170&l=9", desc: "Научитесь создавать стильные интерьеры и получать заказы от клиентов по всей России онлайн.", color: "from-violet-600 to-purple-800", img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" },
+  { id: 2, title: "Для мам в декрете", icon: "Heart", href: "https://best-trening.ru/?o=27381&w=154170&l=1", desc: "Освойте востребованную профессию и начните зарабатывать из дома, не выходя из декрета.", color: "from-rose-500 to-pink-700", img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" },
+  { id: 3, title: "Копирайтер", icon: "FileText", href: "https://best-trening.ru/?o=4042&w=154170&l=1", desc: "Пишите тексты для бизнеса и получайте стабильный доход. Подходит для старта без опыта.", color: "from-sky-500 to-blue-700", img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80" },
+  { id: 4, title: "Маркетолог", icon: "TrendingUp", href: "https://best-trening.ru/?o=7400&w=154170&l=1", desc: "Освойте digital-маркетинг и помогайте бизнесу расти. Одна из самых высокооплачиваемых удалённых профессий.", color: "from-orange-500 to-red-700", img: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=400&q=80" },
+  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag", href: "https://best-trening.ru/?o=32287&w=154170&l=2", desc: "Научитесь управлять продажами на Wildberries и Ozon. Рынок растёт — специалисты нарасхват.", color: "from-emerald-500 to-teal-700", img: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80" },
+  { id: 6, title: "Нейросети", icon: "Cpu", href: "https://best-trening.ru/?o=6949&w=154170&l=2", desc: "Работайте с ChatGPT, Midjourney и другими AI-инструментами. Навык, который ценится в любой профессии.", color: "from-indigo-500 to-blue-800", img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&q=80" },
+  { id: 7, title: "Повышение квалификации", icon: "GraduationCap", href: "https://best-trening.ru/?o=77132&w=154170&l=1", desc: "Углубите знания в своей сфере и выйдите на новый уровень дохода. Для уже работающих специалистов.", color: "from-amber-500 to-yellow-700", img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80" },
+  { id: 8, title: "Тестирование ПО", icon: "Bug", href: "https://best-trening.ru/?o=54693&w=154170&l=4", desc: "Войдите в IT без программирования. QA-специалисты востребованы во всех IT-компаниях мира.", color: "from-cyan-500 to-teal-800", img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=80" },
+  { id: 9, title: "Технический помощник", icon: "Wrench", href: "https://best-trening.ru/?o=8389&w=154170&l=1", desc: "Помогайте бизнесу с техническими задачами удалённо. Отличный старт в IT-карьере без кода.", color: "from-slate-500 to-gray-800", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" },
 ];
 
 const STEPS = [
@@ -231,15 +231,24 @@ export default function Index() {
                   href={course.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card-hover bg-white border border-border p-6 group flex flex-col gap-4 no-underline"
+                  className="card-hover group flex flex-col overflow-hidden no-underline border border-border"
                 >
-                  <div className="w-10 h-10 bg-primary/5 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
-                    <Icon name={course.icon} size={20} className="text-primary group-hover:text-amber-600 transition-colors" fallback="BookOpen" />
+                  <div className="relative h-36 overflow-hidden">
+                    <img src={course.img} alt={course.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${course.color} opacity-80 group-hover:opacity-70 transition-opacity`} />
+                    <div className="absolute inset-0 p-5 flex items-end">
+                      <div className="w-10 h-10 bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <Icon name={course.icon} size={20} className="text-white" fallback="BookOpen" />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors flex-1">{course.title}</h3>
-                  <div className="flex items-center gap-1.5 text-xs font-body text-amber-600 font-semibold pt-2 border-t border-border">
-                    <Icon name="ExternalLink" size={13} />
-                    Перейти к курсу
+                  <div className="bg-white p-5 flex flex-col gap-3 flex-1">
+                    <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors">{course.title}</h3>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">{course.desc}</p>
+                    <div className="flex items-center gap-1.5 text-xs font-body text-amber-600 font-semibold pt-3 border-t border-border">
+                      <Icon name="ExternalLink" size={13} />
+                      Перейти к курсу
+                    </div>
                   </div>
                 </a>
               ))}
