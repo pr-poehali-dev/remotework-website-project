@@ -301,9 +301,9 @@ export default function Index() {
 
               <div className="space-y-6">
                 {[
-                  { icon: "Mail", label: "Email", value: "yurha.1990@gmail.com" },
-                  { icon: "Phone", label: "Телефон", value: "+7 (800) 555-00-00" },
-                  { icon: "MapPin", label: "Адрес", value: "Москва, работаем удалённо" },
+                  { icon: "Mail", label: "Email", value: "yurha.1990@gmail.com", href: "mailto:yurha.1990@gmail.com" },
+                  { icon: "Phone", label: "Телефон", value: "+7 (800) 555-00-00", href: null },
+                  { icon: "MapPin", label: "Адрес", value: "Москва, работаем удалённо", href: null },
                 ].map(c => (
                   <div key={c.label} className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-primary/5 flex items-center justify-center flex-shrink-0">
@@ -311,7 +311,11 @@ export default function Index() {
                     </div>
                     <div>
                       <div className="font-body text-xs text-muted-foreground uppercase tracking-wide">{c.label}</div>
-                      <div className="font-body text-sm font-medium text-foreground">{c.value}</div>
+                      {c.href ? (
+                        <a href={c.href} className="font-body text-sm font-medium text-primary hover:text-amber-600 transition-colors underline underline-offset-2">{c.value}</a>
+                      ) : (
+                        <div className="font-body text-sm font-medium text-foreground">{c.value}</div>
+                      )}
                     </div>
                   </div>
                 ))}
