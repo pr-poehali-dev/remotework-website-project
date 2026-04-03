@@ -301,7 +301,7 @@ export default function Index() {
 
               <div className="space-y-6">
                 {[
-                  { icon: "Mail", label: "Email", value: "info@remotecareer.ru" },
+                  { icon: "Mail", label: "Email", value: "yurha.1990@gmail.com" },
                   { icon: "Phone", label: "Телефон", value: "+7 (800) 555-00-00" },
                   { icon: "MapPin", label: "Адрес", value: "Москва, работаем удалённо" },
                 ].map(c => (
