@@ -15,12 +15,15 @@ const SPECIALTIES = [
 ];
 
 const COURSES = [
-  { id: 1, title: "Основы удалённой работы", provider: "RemoteAcademy", duration: "4 недели", level: "Начальный", price: "Бесплатно", icon: "BookOpen", category: "Основы" },
-  { id: 2, title: "Python для аналитиков", provider: "DataSchool", duration: "8 недель", level: "Средний", price: "12 900 ₽", icon: "Code2", category: "Технологии" },
-  { id: 3, title: "UX-дизайн с нуля", provider: "DesignLab", duration: "6 недель", level: "Начальный", price: "9 900 ₽", icon: "Palette", category: "Дизайн" },
-  { id: 4, title: "Digital-маркетинг", provider: "MarketPro", duration: "5 недель", level: "Начальный", price: "7 500 ₽", icon: "TrendingUp", category: "Маркетинг" },
-  { id: 5, title: "Управление проектами Agile", provider: "PMSchool", duration: "6 недель", level: "Средний", price: "11 000 ₽", icon: "Briefcase", category: "Управление" },
-  { id: 6, title: "Эффективная коммуникация", provider: "SoftSkills", duration: "3 недели", level: "Начальный", price: "4 900 ₽", icon: "MessageSquare", category: "Навыки" },
+  { id: 1, title: "Дизайнер интерьера", icon: "Palette", href: "https://best-trening.ru/?o=18039&w=154170&l=9" },
+  { id: 2, title: "Для мам в декрете", icon: "Heart", href: "https://best-trening.ru/?o=27381&w=154170&l=1" },
+  { id: 3, title: "Копирайтер", icon: "FileText", href: "https://best-trening.ru/?o=4042&w=154170&l=1" },
+  { id: 4, title: "Маркетолог", icon: "TrendingUp", href: "https://best-trening.ru/?o=7400&w=154170&l=1" },
+  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag", href: "https://best-trening.ru/?o=32287&w=154170&l=2" },
+  { id: 6, title: "Нейросети", icon: "Cpu", href: "https://best-trening.ru/?o=6949&w=154170&l=2" },
+  { id: 7, title: "Повышение квалификации", icon: "GraduationCap", href: "https://best-trening.ru/?o=77132&w=154170&l=1" },
+  { id: 8, title: "Тестирование ПО", icon: "Bug", href: "https://best-trening.ru/?o=54693&w=154170&l=4" },
+  { id: 9, title: "Технический помощник", icon: "Wrench", href: "https://best-trening.ru/?o=8389&w=154170&l=1" },
 ];
 
 const STEPS = [
@@ -44,9 +47,7 @@ export default function Index() {
   );
 
   const filteredCourses = COURSES.filter(c =>
-    c.title.toLowerCase().includes(courseSearch.toLowerCase()) ||
-    c.category.toLowerCase().includes(courseSearch.toLowerCase()) ||
-    c.provider.toLowerCase().includes(courseSearch.toLowerCase())
+    c.title.toLowerCase().includes(courseSearch.toLowerCase())
   );
 
   const scrollToSection = (section: string) => {
@@ -222,27 +223,22 @@ export default function Index() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredCourses.map(course => (
-                <div key={course.id} className="card-hover bg-white border border-border p-6 cursor-pointer group">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 bg-primary/5 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
-                      <Icon name={course.icon} size={20} className="text-primary group-hover:text-amber-600 transition-colors" fallback="BookOpen" />
-                    </div>
-                    <span className="text-sm font-body font-semibold text-amber-600">{course.price}</span>
+                <a
+                  key={course.id}
+                  href={course.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-hover bg-white border border-border p-6 group flex flex-col gap-4 no-underline"
+                >
+                  <div className="w-10 h-10 bg-primary/5 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
+                    <Icon name={course.icon} size={20} className="text-primary group-hover:text-amber-600 transition-colors" fallback="BookOpen" />
                   </div>
-                  <span className="text-xs font-body text-muted-foreground uppercase tracking-wide">{course.category}</span>
-                  <h3 className="font-display text-lg font-bold text-primary mt-1 mb-2">{course.title}</h3>
-                  <p className="font-body text-sm text-muted-foreground mb-4">{course.provider}</p>
-                  <div className="flex items-center gap-4 pt-4 border-t border-border">
-                    <div className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
-                      <Icon name="Clock" size={13} />
-                      {course.duration}
-                    </div>
-                    <div className="flex items-center gap-1.5 text-xs font-body text-muted-foreground">
-                      <Icon name="BarChart2" size={13} />
-                      {course.level}
-                    </div>
+                  <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors flex-1">{course.title}</h3>
+                  <div className="flex items-center gap-1.5 text-xs font-body text-amber-600 font-semibold pt-2 border-t border-border">
+                    <Icon name="ExternalLink" size={13} />
+                    Перейти к курсу
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           )}
