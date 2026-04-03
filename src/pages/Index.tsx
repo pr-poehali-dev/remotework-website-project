@@ -4,14 +4,15 @@ import Icon from "@/components/ui/icon";
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/9a5a11e5-106d-4c07-89c0-21534e5eeeb9/files/b9a7b842-734e-430f-994f-68ea50c2554b.jpg";
 
 const SPECIALTIES = [
-  { id: 1, title: "Разработчик", category: "Технологии", demand: "Высокий", salary: "от 120 000 ₽", icon: "Code2", desc: "Frontend, backend, fullstack-разработчики востребованы во всех сферах удалённого рынка." },
-  { id: 2, title: "Дизайнер UX/UI", category: "Дизайн", demand: "Высокий", salary: "от 80 000 ₽", icon: "Palette", desc: "Создание интерфейсов, прототипирование, работа с Figma и дизайн-системами." },
-  { id: 3, title: "Маркетолог", category: "Маркетинг", demand: "Средний", salary: "от 70 000 ₽", icon: "TrendingUp", desc: "Digital-маркетинг, контент, таргетированная реклама и аналитика." },
-  { id: 4, title: "Копирайтер", category: "Контент", demand: "Средний", salary: "от 50 000 ₽", icon: "FileText", desc: "Тексты для брендов, SEO-статьи, сценарии и контент-стратегии." },
-  { id: 5, title: "Аналитик данных", category: "Технологии", demand: "Высокий", salary: "от 110 000 ₽", icon: "BarChart2", desc: "SQL, Python, визуализация данных и бизнес-аналитика для удалённых команд." },
-  { id: 6, title: "Проект-менеджер", category: "Управление", demand: "Средний", salary: "от 90 000 ₽", icon: "Briefcase", desc: "Управление распределёнными командами, Agile/Scrum, координация процессов." },
-  { id: 7, title: "Финансовый аналитик", category: "Финансы", demand: "Средний", salary: "от 100 000 ₽", icon: "DollarSign", desc: "Финансовая отчётность, моделирование, работа с международными клиентами." },
-  { id: 8, title: "HR-специалист", category: "Управление", demand: "Средний", salary: "от 65 000 ₽", icon: "Users", desc: "Подбор персонала, онбординг удалённых сотрудников, корпоративная культура." },
+  { id: 1, title: "Дизайнер", icon: "Palette" },
+  { id: 2, title: "Для мам в декрете", icon: "Heart" },
+  { id: 3, title: "Копирайтер", icon: "FileText" },
+  { id: 4, title: "Маркетолог", icon: "TrendingUp" },
+  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag" },
+  { id: 6, title: "Нейросети", icon: "Cpu" },
+  { id: 7, title: "Повышение квалификации", icon: "GraduationCap" },
+  { id: 8, title: "Тестирование ПО", icon: "Bug" },
+  { id: 9, title: "Технический помощник", icon: "Wrench" },
 ];
 
 const COURSES = [
@@ -42,8 +43,7 @@ export default function Index() {
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
 
   const filteredSpecs = SPECIALTIES.filter(s =>
-    s.title.toLowerCase().includes(specSearch.toLowerCase()) ||
-    s.category.toLowerCase().includes(specSearch.toLowerCase())
+    s.title.toLowerCase().includes(specSearch.toLowerCase())
   );
 
   const filteredCourses = COURSES.filter(c =>
@@ -169,22 +169,24 @@ export default function Index() {
               Ничего не найдено по запросу «{specSearch}»
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredSpecs.map(spec => (
-                <div key={spec.id} className="card-hover border border-border bg-white p-6 cursor-pointer group">
-                  <div className="w-10 h-10 bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-amber-50 transition-colors">
-                    <Icon name={spec.icon} size={20} className="text-primary group-hover:text-amber-600 transition-colors" fallback="Briefcase" />
+                <button
+                  key={spec.id}
+                  onClick={() => scrollToSection("Курсы")}
+                  className="card-hover border border-border bg-white p-6 group flex items-center gap-4 text-left w-full"
+                >
+                  <div className="w-12 h-12 bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-50 transition-colors">
+                    <Icon name={spec.icon} size={22} className="text-primary group-hover:text-amber-600 transition-colors" fallback="Briefcase" />
                   </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-body font-medium text-muted-foreground uppercase tracking-wide">{spec.category}</span>
-                    <span className={`text-xs px-2 py-0.5 font-body ${spec.demand === "Высокий" ? "bg-green-50 text-green-700" : "bg-amber-50 text-amber-700"}`}>
-                      {spec.demand}
-                    </span>
+                  <div className="flex-1">
+                    <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors">{spec.title}</h3>
+                    <div className="flex items-center gap-1 mt-1 text-xs font-body text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Icon name="ArrowDown" size={12} />
+                      Смотреть курсы
+                    </div>
                   </div>
-                  <h3 className="font-display text-lg font-bold text-primary mb-2">{spec.title}</h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">{spec.desc}</p>
-                  <div className="font-body text-sm font-semibold text-amber-600">{spec.salary}</div>
-                </div>
+                </button>
               ))}
             </div>
           )}
