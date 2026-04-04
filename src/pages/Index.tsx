@@ -4,15 +4,15 @@ import Icon from "@/components/ui/icon";
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/9a5a11e5-106d-4c07-89c0-21534e5eeeb9/files/b9a7b842-734e-430f-994f-68ea50c2554b.jpg";
 
 const SPECIALTIES = [
-  { id: 1, title: "Дизайнер", icon: "Palette", desc: "Создание визуальных образов, интерьеров и брендов. Востребованная творческая профессия с возможностью работать на международных клиентов.", color: "from-violet-600 to-purple-800", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80" },
-  { id: 2, title: "Для мам в декрете", icon: "Heart", desc: "Гибкий формат работы для мам в декретном отпуске. Доход из дома без ущерба для семьи и без опыта работы.", color: "from-rose-500 to-pink-700", img: "https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?w=400&q=80" },
-  { id: 3, title: "Копирайтер", icon: "FileText", desc: "Написание продающих текстов, статей и сценариев. Одна из самых доступных профессий для старта в удалённой работе.", color: "from-sky-500 to-blue-700", img: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&q=80" },
-  { id: 4, title: "Маркетолог", icon: "TrendingUp", desc: "Продвижение товаров и услуг в интернете. Работа с рекламой, аналитикой и стратегиями роста бизнеса.", color: "from-orange-500 to-red-700", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" },
-  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag", desc: "Управление продажами на Wildberries, Ozon и других платформах. Перспективное направление с высоким спросом на специалистов.", color: "from-emerald-500 to-teal-700", img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&q=80" },
-  { id: 6, title: "Нейросети", icon: "Cpu", desc: "Работа с инструментами искусственного интеллекта. Навык будущего, который уже сейчас открывает новые карьерные возможности.", color: "from-indigo-500 to-blue-800", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&q=80" },
-  { id: 7, title: "Повышение квалификации", icon: "GraduationCap", desc: "Углубление знаний в своей профессии для карьерного роста. Актуально для специалистов, которые хотят зарабатывать больше.", color: "from-amber-500 to-yellow-700", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80" },
-  { id: 8, title: "Тестирование ПО", icon: "Bug", desc: "Проверка качества программного обеспечения. Профессия с низким порогом входа и стабильно высоким спросом на рынке.", color: "from-cyan-500 to-teal-800", img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400&q=80" },
-  { id: 9, title: "Технический помощник", icon: "Wrench", desc: "Административная и техническая поддержка бизнеса удалённо. Отличный старт для тех, кто хочет войти в IT-сферу.", color: "from-slate-500 to-gray-800", img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&q=80" },
+  { id: 1, title: "Дизайнер", icon: "Palette", desc: "Создаёте логотипы, интерьеры, сайты и бренды. Работаете в Figma, Photoshop или Canva. Заказчики — со всего мира.", salary: "от 40 000 до 150 000 ₽/мес", color: "from-violet-600 to-purple-800", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80" },
+  { id: 2, title: "Для мам в декрете", icon: "Heart", desc: "Освойте профессию, которая позволит работать из дома в удобное время — пока малыш спит. Без опыта и технических знаний.", salary: "от 25 000 до 70 000 ₽/мес", color: "from-rose-500 to-pink-700", img: "https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?w=400&q=80" },
+  { id: 3, title: "Копирайтер", icon: "FileText", desc: "Пишете тексты для сайтов, соцсетей, рекламы и рассылок. Одна из самых лёгких профессий для старта — нужны только грамотность и усидчивость.", salary: "от 30 000 до 100 000 ₽/мес", color: "from-sky-500 to-blue-700", img: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&q=80" },
+  { id: 4, title: "Маркетолог", icon: "TrendingUp", desc: "Запускаете рекламу, анализируете аудиторию, продвигаете бизнес в интернете. Востребован в любой компании.", salary: "от 60 000 до 200 000 ₽/мес", color: "from-orange-500 to-red-700", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" },
+  { id: 5, title: "Маркетплейсы", icon: "ShoppingBag", desc: "Управляете карточками товаров на Wildberries и Ozon: фото, описания, реклама, аналитика. Рынок растёт — специалистов не хватает.", salary: "от 50 000 до 180 000 ₽/мес", color: "from-emerald-500 to-teal-700", img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&q=80" },
+  { id: 6, title: "Нейросети", icon: "Cpu", desc: "Работаете с ChatGPT, Midjourney, Suno и другими AI-инструментами. Помогаете бизнесу автоматизировать задачи и экономить время.", salary: "от 50 000 до 160 000 ₽/мес", color: "from-indigo-500 to-blue-800", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&q=80" },
+  { id: 7, title: "Повышение квалификации", icon: "GraduationCap", desc: "Уже работаете в своей сфере, но хотите зарабатывать больше? Прокачайте навыки и выйдите на новый уровень дохода.", salary: "+30–50% к текущей зарплате", color: "from-amber-500 to-yellow-700", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80" },
+  { id: 8, title: "Тестирование ПО", icon: "Bug", desc: "Проверяете приложения и сайты на ошибки до их выхода. Входной порог — низкий, обучение — быстрое, а спрос на рынке — стабильно высокий.", salary: "от 60 000 до 150 000 ₽/мес", color: "from-cyan-500 to-teal-800", img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400&q=80" },
+  { id: 9, title: "Технический помощник", icon: "Wrench", desc: "Помогаете бизнесу с рутинными задачами: настройка CRM, работа с таблицами, техподдержка. Отличный старт в IT без написания кода.", salary: "от 35 000 до 90 000 ₽/мес", color: "from-slate-500 to-gray-800", img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&q=80" },
 ];
 
 const COURSES = [
@@ -88,33 +88,34 @@ export default function Index() {
 
       {/* Hero */}
       <section id="Главная" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-700 via-indigo-600 to-cyan-500 z-10" />
         <img
           src={HERO_IMAGE}
           alt="Удалённая работа"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center mix-blend-overlay opacity-30"
         />
-        <div className="relative z-20 container max-w-6xl mx-auto px-6 py-32">
+        <div className="absolute inset-0 z-10" style={{background: "radial-gradient(ellipse at 70% 50%, rgba(251,191,36,0.18) 0%, transparent 60%)"}} />
+        <div className="relative z-20 container max-w-6xl mx-auto px-6 py-36">
           <div className="max-w-2xl">
-            <p className="text-accent font-body text-sm font-semibold uppercase tracking-widest mb-4 animate-fade-in-up">
+            <p className="text-yellow-300 font-body text-sm font-semibold uppercase tracking-widest mb-4 animate-fade-in-up">
               Профессиональный гид по удалённой карьере
             </p>
-            <h1 className="font-display text-5xl md:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up-delay-1">
-              Ваша карьера<br />без границ
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up-delay-1">
+              Ваша карьера<br /><span className="text-yellow-300">без границ</span>
             </h1>
-            <p className="font-body text-white/80 text-lg leading-relaxed mb-10 animate-fade-in-up-delay-2">
+            <p className="font-body text-white/90 text-lg leading-relaxed mb-10 animate-fade-in-up-delay-2">
               Достоверная информация о специальностях, курсах и стратегиях построения успешной карьеры в удалённом формате.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up-delay-3">
               <button
                 onClick={() => scrollToSection("Специальности")}
-                className="px-8 py-3 bg-accent text-foreground font-body font-semibold text-sm uppercase tracking-wide hover:bg-accent/90 transition-colors"
+                className="px-8 py-3 bg-yellow-400 text-gray-900 font-body font-bold text-sm uppercase tracking-wide hover:bg-yellow-300 transition-colors shadow-lg"
               >
                 Выбрать специальность
               </button>
               <button
                 onClick={() => scrollToSection("Курсы")}
-                className="px-8 py-3 border border-white text-white font-body font-semibold text-sm uppercase tracking-wide hover:bg-white/10 transition-colors"
+                className="px-8 py-3 border-2 border-white/60 text-white font-body font-semibold text-sm uppercase tracking-wide hover:bg-white/15 transition-colors backdrop-blur-sm"
               >
                 Смотреть курсы
               </button>
@@ -130,7 +131,7 @@ export default function Index() {
                 { num: "45 000+", label: "Успешных карьер" },
               ].map(stat => (
                 <div key={stat.label} className="text-center">
-                  <div className="font-display text-2xl font-bold text-white">{stat.num}</div>
+                  <div className="font-display text-2xl font-bold text-yellow-300">{stat.num}</div>
                   <div className="font-body text-xs text-white/70 uppercase tracking-wide mt-1">{stat.label}</div>
                 </div>
               ))}
@@ -188,7 +189,11 @@ export default function Index() {
                   <div className="bg-white p-5 flex flex-col gap-3 flex-1">
                     <h3 className="font-display text-lg font-bold text-primary group-hover:text-amber-600 transition-colors">{spec.title}</h3>
                     <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">{spec.desc}</p>
-                    <div className="flex items-center gap-1 text-xs font-body text-amber-600 font-semibold pt-3 border-t border-border">
+                    <div className="flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-3 py-1.5 text-xs font-body font-semibold w-fit">
+                      <Icon name="Banknote" size={13} />
+                      {spec.salary}
+                    </div>
+                    <div className="flex items-center gap-1 text-xs font-body text-amber-600 font-semibold pt-2 border-t border-border">
                       <Icon name="ArrowDown" size={12} />
                       Смотреть курсы
                     </div>
